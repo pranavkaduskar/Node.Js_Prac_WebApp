@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Node Farm</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+
+        <style>
+            *,
+            *::before,
+            *::after{
+                margin: 0;
+                padding: 0;
+                box-sizing: inherit;
+            
+            }
+            
+            html {
+                font-size: 62.5%;
+                box-sizing: border-box;
+            }
+            
+            body{
+                padding: 5rem 5rem 10rem;
+                line-height: 1.7;
+                font-family: 'Nunito Sans', sans-serif;
+                color: #555;
+                min-height: 100vh;
+                background: linear-gradient(to bottom right, #9be15d,#00e3ae );
+                 
+            }
+            
+            h1{
+                font-family: 'Megrim', sans-serif;
+                font-size: 6rem;
+                color: white;
+                transform: skewY(-5deg);
+                text-align: center;
+                position: relative;
+                word-spacing: 3px;
+            }
+            h1::before{
+                content: '';
+                display: block;
+                height: 65%;
+                width: 49%;
+                position: absolute;
+                top: 105%;
+                left: 50%;
+                background: linear-gradient(to bottom right, #9be15d,#00e3ae );
+                opacity: 0.8;
+                z-index: -1;
+                transform: skewY(370deg) translate(-50%, -50%);
+            
+            
+            }
+            
+            .container{
+                width: 95rem;
+                margin: 0 auto;
+            }
+            
+            .cards-container{
+                margin-top: 8rem;
+            }
+            
+            .card{
+                background: white;
+                box-shadow: 0 2rem 6rem 1rem rgba(0 ,0,0,0.15);
+                margin-bottom: 5rem;
+                flex-direction: row; /* Ensure children are in a row */
+
+                transform: skewX(-20deg);
+                display: flex;
+                transition: all 0.5s;
+            }
+            
+            .card_emoji{
+                font-size: 5.5rem;
+                line-height: 1.2;
+                padding: 1.5rem 6rem 0.5rem 1.5rem;
+                letter-spacing: -4rem;
+                transform: skewX(20deg);
+            
+            }
+            
+            .card_title-box{
+                background: linear-gradient(to bottom, #9be15d, #00e3ae);
+                margin-right: auto;
+                display: flex;
+                align-items: center;
+                padding: 0 3rem;
+            }
+            
+            .card_title{
+                font-family: 'Megrim', sans-serif;
+                color: white;
+                font-size: 3.25;
+                transform: skewX(20deg);
+            
+            }
+            
+            .card_details{
+                display: flex;
+            
+            }
+            
+            .card_details-box{
+                align-self: stretch;
+                border-right: 1px solid #ddd;
+                display: flex;
+                align-items: center;
+            }
+            
+            .card_details-box:last-child{
+                border: none;
+            }
+            
+            .card_detail {
+                font-weight: 400;
+                font-size: 1.8rem;
+                transform: skewX(20deg);
+                padding: 1.75rem;
+            }
+            
+            .card_detail--organic{
+                font-weight: 900;
+                text-transform: uppercase;
+                font-size: 1.9rem;
+                background-image: linear-gradient(to right, #9be15d, #00e3ae);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            
+            }
+            
+            .card_detail--price{
+                font-weight: 900;
+                font-size: 1.9rem;
+            }
+            
+            .card_link:link,
+            .card_link:visited{
+                flex: 0 0 auto;
+                background-color: #79e17b;
+                color:  white;
+                font-size: 1.6rem;
+                font-weight: 900;
+                text-transform: uppercase;
+                text-decoration: none;
+                padding: 2.5rem;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s;
+            
+            }
+            
+            .card_link:hover,
+            .card_link:active{
+                background-color: #9be15d;
+            }
+            
+            .card_link span {
+                transform:  skewX(20deg);
+            }
+               
+            .card:hover{
+                transform: skewX(-20deg)scale(1.08);
+                box-shadow: 0 3rem 8rem 2rem rgba(0 ,0,0,0.15);
+            }
+            
+            
+            
+            
+            
+            .emoji_left{
+                font-size: 2rem;
+                margin-right: 1rem;
+
+            }
+
+            .emoji_right{
+                font-size: 2rem;
+                margin-left: 1rem;
+                
+            }
+            .not-organic{
+                display: none;
+            }
+
+
+
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>🌽 Node Farm 🍃</h1>
+
+            <div class="cards-container">
+               {%PRODUCT_CARDS%}
+            </div>
+        </div>
+        <header>
+            <!-- place navbar here -->
+        </header>
+        <main></main>
+        <footer>
+            <!-- place footer here -->
+        </footer>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

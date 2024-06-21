@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Fresh  {%PRODUCTNAME%}   {%IMAGE%}  /// Node Farm</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+
+        <style>
+        
+            *,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 5rem 5rem 10rem;
+    line-height: 1.7;
+    font-family: 'Nunito Sans', sans-serif;
+    color: #555;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #9be15d,#00e3ae );
+     
+}
+
+h1{
+    font-family: 'Megrim', sans-serif;
+    font-size: 6rem;
+    color: white;
+    transform: skewY(-5deg);
+    text-align: center;
+    position: relative;
+    word-spacing: 3px;
+}
+h1::before{
+    content: '';
+    display: block;
+    height: 65%;
+    width: 49%;
+    position: absolute;
+    top: 105%;
+    left: 50%;
+    background: linear-gradient(to bottom right, #9be15d,#00e3ae );
+    opacity: 0.8;
+    z-index: -1;
+    transform: skewY(370deg) translate(-50%, -50%);
+
+
+}
+
+.container{
+    width: 95rem;
+    margin: 0 auto;
+}
+
+.product{
+    width: 60rem;
+    margin: 0 auto;
+    margin-top: 9rem;
+    background: white;
+    box-shadow: 0 3rem 6rem 1rem rgb(0, 0, 0.2);
+    position: relative;
+}
+
+.product_hero{
+    position: relative;
+    height: 22rem;
+    overflow: hidden;
+
+}
+
+.product_hero::before{
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to left bottom, #9be15d, #00e3ae);
+    opacity: 0.5;
+    z-index: 100;
+
+}
+
+.product_emogji{
+    font-size: 15rem;
+    position: absolute;
+
+}
+
+.product_emogji--1{
+    top: -4rem;
+    left: -2rem;
+    z-index: 10;
+
+}
+
+.product_emogji--2{
+    top: -6rem;
+    left: 9rem;
+}
+
+
+.product_emogji--3{
+    top: -6rem;
+    right: 12rem;
+}
+
+
+.product_emogji--4{
+    top: -6rem;
+    right: 2rem;
+    z-index: 10;
+}
+
+
+.product_emogji--5{
+    bottom: -9rem;
+    left: 18rem;
+}
+
+
+.product_emogji--6{
+    bottom: -8rem;
+    left: 7rem;
+}
+
+
+.product_emogji--7{
+    bottom: -10rem;
+    right: 11rem;
+
+}
+
+
+.product_emogji--8{
+    bottom: -8rem;
+    right: -2rem;
+}
+
+
+.product_emogji--9{
+    top: -7rem;
+    left: 19rem;
+}
+
+
+.product_organic{
+    position: absolute;
+    top: -4rem;
+    right: -4rem;
+    z-index: 1000;
+    height: 11rem;
+    width: 11rem;
+    background-image: linear-gradient(to bottom, #9be15d, #00e3ae);
+    border-radius: 50%;
+    transform: rotate(15deg);
+    box-shadow: 0 2rem 4rem rgb(0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content:center;
+
+
+}
+
+.product_organic h5{
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    color: white;
+
+}
+
+.product_back:link,
+.product_back:visited{
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    z-index: 1000;
+    color: #555;
+    background-color: white;
+    box-shadow: 0 1rem 3rem rgba(0, 9, 0, 0.3);
+    border-radius: 100rem;
+    padding: 0 2rem;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+
+}
+
+
+ 
+
+.product_back:hover,
+.product_back:active{
+    background-color: #79e17b;
+}
+
+.product_name{
+    background: linear-gradient(to bottom, #9be15d , #00e3ae);
+    padding: 1rem;
+    font-family: 'Megrim', sans-serif;
+    font-size: 4rem;
+    color: white;
+    text-align: center;
+    word-spacing: 2px;
+
+}
+
+
+
+.product_details{
+    background-color: #eee;
+    padding: 4rem 6rem;
+    font-size: 1.9rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.5rem;
+
+
+}
+
+
+.product_description{
+    padding: 5rem  6rem;
+    font-size: 1.6rem;
+    line-height: 1.8;
+
+
+}
+
+.product_link:link,
+.product_link:visited{
+    display: block;
+    background-color: #79e17b;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 1.5rem;
+    text-align: center;
+    transform: scale(1.07) skewX(-20deg);
+    box-shadow: 0 2rem 6rem rgba(0 ,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+
+}
+
+.product_link:hover,
+.product_link:active{
+    background-color: #9be15d;
+    transform: scale(1.1) skewX(-20deg);
+
+}
+
+.product_link span{
+    transform: skewX(20deg);
+    
+}
+
+.emoji-left{
+    font-size: 2rem;
+    margin-right: 1rem;
+
+}
+.emoji-right{
+    font-size: 2rem;
+    margin-left: 1rem ;
+}
+
+.not-organic{
+    display: none;
+}
+
+
+
+        </style>
+       
+
+    </head>
+
+    <body>
+        <div
+            class="container"
+        >
+        <h1>🌽 Node Farm 🧺</h1>
+
+         <figure class="product">
+            <div class="product_organic  {%NOT_ORGANIC%} "><h5>Organic</h5></div>           
+            <a href="/overview" class="product_back">
+                <span class="emoji-left">👈</span>Back
+            </a> 
+            <div class="product_hero">
+
+                <span class="product_emogji product_emogji--1"> {%IMAGE%} </span>
+                <span class="product_emogji product_emogji--2"> {%IMAGE%} </span>
+                <span class="product_emogji product_emogji--3"> {%IMAGE%} </span>
+                <span class="product_emogji product_emogji--4"> {%IMAGE%} </span>
+                <span class="product_emogji product_emogji--5"> {%IMAGE%} </span>
+                <span class="product_emogji product_emogji--6"> {%IMAGE%} </span>
+                <span class="product_emogji product_emogji--7"> {%IMAGE%} </span>
+                <span class="product_emogji product_emogji--8"> {%IMAGE%} </span>
+                <span class="product_emogji product_emogji--9"> {%IMAGE%} </span>
+
+            </div>
+            <h2 class="product_name">{%PRODUCTNAME%}</h2>
+            <div class="product_details"> 
+                <p class="emoji-left">🌍<span>From: {%FROM%}</span></p>
+                <p class="emoji-left">❤️<span>{%NUTRIENTS%}</span></p>
+                <p class="emoji-left">📦<span>{%QUANTITY%} </span></p>
+                <p class="emoji-left">💵<span></span> ₹ {%PRICE%}</p>
+            </div>
+
+            <a href="#" class="product_link">
+                <span class="emoji-left">🛒</span>
+                <span>Add to Shopping Card (₹ {%PRICE%})</span>
+            </a>
+            <p class="product_description" > 
+                {%DESCRIPTION%}
+            </p>
+
+         </figure>
+        </div>
+        
+      
+        <header>
+            <!-- place navbar here -->
+        </header>
+        <main></main>
+        <footer>
+            <!-- place footer here -->
+        </footer>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

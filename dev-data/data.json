@@ -1,0 +1,63 @@
+[
+    {
+        "id" : 0,
+        "productName" : "Fresh Avocados",
+        "image" : "🥑",
+        "from" : " Mexico",
+        "nutrients" : "Vitamin E, proteins & potassium. ",
+        "quantity" : "1 🥑" ,
+        "price" : 15,
+        "organic" : true,
+        "description" : "Avocados– also known as ‘alligator pears’, are grown in Central Mexico & are the prime ingredient for guacamole. They are rich in terms of healthy fats, vitamin E, proteins & potassium."
+
+    },
+    {
+        "id" : 1,
+        "productName" : "Fresh Apple",
+        "image" : "🍎",
+        "from" : "Europe, America, Asia",
+        "nutrients" : "Vitamin A, Vitamin B",
+        "quantity" : "1kg 🍎" ,
+        "price" : 140,
+        "organic" : true,
+        "description" : "Apple- Grows in Europe, America, Asia & other places. Apples are in various colours, like green, red. Ripe red apples taste sweet, whereas green apples taste sour. Lots of dishes can be made from apples. "
+
+    },
+    {
+        "id" : 2,
+        "productName" : "Fresh Bananas",
+        "image" : "🍌",
+        "from" : "Asia",
+        "nutrients" : "Vitamin B, Vitamin K",
+        "quantity" : "12 🍌" ,
+        "price" : 120,
+        "organic" : true,
+        "description" : "Bananas – They are grown all over the world & are eaten in raw as well as ripe form. Ripe bananas have sweet, tender flesh & red or yellow peel, whereas raw bananas have tougher flesh & green peel."
+
+
+    },
+    {
+        "id" : 3,
+        "productName" : "Fresh Blueberries",
+        "image" : "🫐",
+        "from" : "Asia",
+        "nutrients" : "Vitamins E, K & C.",
+        "quantity" : "1kg 🫐" ,
+        "price" : 200,
+        "organic" : true,
+        "description" : "Blueberries are commonly grown in Southwestern Asia. When young, these berries are pale in colour & turn dark black when ripe. They are rich in Vitamins E, K & C."
+
+    },
+    {
+        "id" : 4,
+        "productName" : "Fresh Mango",
+        "image" : "🥭",
+        "from" : "Asia",
+        "nutrients" : "Vitamin B, Vitamin A",
+        "quantity" : "12 🥭" ,
+        "price" : 799,
+        "organic" : true,
+        "description" : "Mango provides 50% of your daily vitamin C, 8% of your daily Vitamin A and 8% of your daily vitamin B6. These nutrients in mango may help support your body's immune system. Learn more. One serving (3/4 cup) of mango contains 7% of your daily fiber. "
+
+    }
+]

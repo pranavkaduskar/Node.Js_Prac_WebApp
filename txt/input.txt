@@ -1,0 +1,1 @@
+hie ithis is input text from txt folder.

@@ -1,0 +1,95 @@
+const { log } = require('console');
+const fs = require('fs');
+const http = require('http');
+const path = require('path');
+const url = require('url');
+
+
+// blocking, Syncronous way.
+
+
+// const text = fs.readFileSync('./txt/input.txt', 'utf-8');
+// console.log(text);
+
+// const textOut = `this is what we know about the folder ${text}. \nCreated on ${Date.now()}`;
+
+// fs.writeFileSync('./txt/output.text', textOut);
+// console.log("fileWriten");
+
+
+
+//Non-Blocking, asynchronous way.
+// fs.readFile('./txt/start.txt','utf-8' ,(err,data1) =>{
+//     fs.readFile(`./txt/${data1}.txt`,'utf-8' ,(err,data2) =>{
+//         console.log(data2);
+//         fs.readFile(`./txt/append.txt`,'utf-8' ,(err,data3) =>{
+//             console.log(data3);
+
+//             fs.writeFile('./txt/final.txt', `${data2}\n${data3}`, err =>{
+//                 log("Your file is created..");
+//             });
+//         });
+//     });
+// });
+// log("Will read file");
+
+
+/////////////////
+//SERVER
+
+const replaceTemplate = (temp, product)=>{
+    let output = temp.replace(/{%PRODUCTNAME%}/g, product.productName);
+    output = output.replace(/{%IMAGE%}/g,product.image);
+    output = output.replace(/{%PRICE%}/g,product.price);
+    output = output.replace(/{%FROM%}/g,product.from);
+    output = output.replace(/{%NUTRIENTS%}/g,product.nutrients);
+    output = output.replace(/{%QUANTITY%}/g,product.quantity);
+    output = output.replace(/{%DESCRIPTION%}/g,product.description);
+    output = output.replace(/{%ID%}/g,product.id);
+
+    if (!product.organic) output = output.replace(/{%NOT_ORGANIC%}/g,'not-organic');   
+    
+    return output;
+     
+}
+
+const tempOvrview = fs.readFileSync( `${__dirname}/templates/template-overview.html`);
+const tempCard = fs.readFileSync( `${__dirname}/templates/template-card.html`);
+const tempProduct = fs.readFileSync( `${__dirname}/templates/template-product.html`);
+
+const data = fs.readFileSync( `${__dirname}/dev-data/data.json`);
+const dataObj = JSON.parse(data);
+
+
+const  server = http.createServer((req,resp)=>{
+    const pathName = req.url;
+
+    // Oerview page.
+    if(pathName === '/' || pathName === '/overview'){
+        resp.writeHead(200, {'Content-type':'text/html'});
+
+        const cardsHtml = dataObj.map(el => replaceTemplate(tempCard, el))
+        log(cardsHtml); 
+        resp.end(tempOvrview);
+    
+        //Product  page.
+    }else if(pathName === '/product'){
+        resp.end("This is Product Page");
+
+        //API.
+    }else if(pathName === '/api'){
+        
+        resp.writeHead(200,{'Content-type': 'application/json'});
+        resp.end(data);
+
+        //NOT Found.
+    }else{
+        resp.writeHead(404);
+        resp.end("Hello from the Server! page Not found");
+    }
+    
+});
+
+server.listen(8000, '127.0.0.1' , () =>{
+    log("Listning response from server");
+})
